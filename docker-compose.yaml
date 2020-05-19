@@ -4,8 +4,6 @@ services:
   mongo:
     container_name: mongo
     image: 'mongo:latest'
-    ports:
-      - 27017:27017
     volumes:
       - /Users/Shared/data/db:/data/db
   backend:
