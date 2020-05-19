@@ -13,7 +13,7 @@ export default {
     signInErrorHandler({ commit }, error) {
         let message;
 
-        if (error && error.isAxiosError && error.response.status === 401) {
+        if (error && error.isAxiosError && error.response && error.response.status === 401) {
             message = 'Niewłaściwy login lub hasło.';
         } else {
             message = 'Wystąpił błąd, spróbuj ponownie później.';
