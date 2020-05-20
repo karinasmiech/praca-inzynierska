@@ -30,6 +30,6 @@ const userSchema = baseSchema({
 userSchema.pre('save', function(next) {
     this.password = bcrypt.hashSync(this.password, 10);
     next();
-})
+});
 
 module.exports = model('User', userSchema);

@@ -2,7 +2,7 @@
     <v-container class="fill-height">
         <v-row justify="center">
             <v-col cols="12" md="4">
-                <v-card>
+                <v-card class="elevation-12">
                     <v-form
                         @input.native="clearError"
                         ref="form"

@@ -4,7 +4,7 @@
             <v-list dense>
                 <v-list-item link to="/koncerty">
                     <v-list-item-action>
-                        <v-icon>mdi-settings</v-icon>
+                        <v-icon>mdi-calendar-multiple</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                         <v-list-item-title>
@@ -12,19 +12,31 @@
                         </v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link to="/uzytkownicy">
+                <v-list-item link to="/zespol">
                     <v-list-item-action>
-                        <v-icon>mdi-account-circle</v-icon>
+                        <v-icon>mdi-account-group</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Użytkownik</v-list-item-title>
+                        <v-list-item-title>
+                            Zespół
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link to="/konto">
+                    <v-list-item-action>
+                        <v-icon>mdi-settings</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Konto</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
         <v-app-bar app clipped-left>
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title>{{username || 'admin'}}</v-toolbar-title>
+            <v-toolbar-title>
+                {{username}}
+            </v-toolbar-title>
             <v-spacer/>
             <v-btn @click="signOut" text>
                 Wyloguj
@@ -58,9 +70,11 @@ export default {
             drawer: null
         };
     },
+    created() {
+        this.$store.dispatch('account/fetchData');
+    },
     computed: {
         ...mapGetters(['snackbarText']),
-        ...mapGetters('auth', ['username']),
         snackbar: {
             get() {
                 return this.$store.getters['snackbar'];
@@ -68,8 +82,13 @@ export default {
             set(value) {
                 this.$store.commit('SET_SNACKBAR', value);
             }
+        },
+        username() {
+            return this.$store.getters['account/user'].name || 'admin';
         }
     },
-    methods: mapActions('auth', ['signOut'])
+    methods: {
+        ...mapActions('auth', ['signOut'])
+    }
 };
 </script>

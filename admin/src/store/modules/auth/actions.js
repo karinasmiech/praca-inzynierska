@@ -21,8 +21,10 @@ export default {
 
         commit('SET_ERROR', message);
     },
-    signOut() {
+    signOut({ commit }) {
         TokenService.removeTokens();
+        commit('SET_PASSWORD', '');
+        commit('SET_USERNAME', '');
 
         if (router.currentRoute.name !== 'sign-in') {
             router.push({ name: 'sign-in' });

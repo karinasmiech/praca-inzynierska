@@ -22,7 +22,16 @@ class AuthModule {
             User
                 .findOne({ login: credentials.getUserName() })
                 .select('+password')
-                .then(user => AuthService.isValidPassword(user, credentials.getPassword()))
+                .then(user => {
+                    if (
+                        user &&
+                        AuthService.isValidPassword(credentials.getPassword(), user.password)
+                    ) {
+                        return user;
+                    }
+
+                    throw new Error('Invalid password');
+                })
                 .then(user => resolve(user))
                 .catch(() => reject(AuthService.invalidClientError()));
         });

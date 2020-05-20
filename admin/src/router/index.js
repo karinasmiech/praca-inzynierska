@@ -4,7 +4,8 @@ import AuthService from '@/services/auth-service';
 import Layout from '@/components/layout.vue';
 import SignIn from '@/components/sign-in.vue';
 import Concerts from '@/components/concerts.vue';
-import Users from '@/components/user.vue';
+import Account from '@/components/account.vue';
+import Crew from '@/components/crew.vue';
 
 Vue.use(VueRouter);
 
@@ -24,9 +25,14 @@ const routes = [
                 component: Concerts
             },
             {
-                path: 'uzytkownicy',
-                name: 'users',
-                component: Users
+                path: 'zespol',
+                name: 'crew',
+                component: Crew
+            },
+            {
+                path: 'konto',
+                name: 'account',
+                component: Account
             }
         ]
     },

@@ -16,12 +16,8 @@ class AuthService {
         return new AuthError(401, AuthError.INVALID_CLIENT, params);
     }
 
-    static isValidPassword(user, password) {
-        if (user && bcrypt.compareSync(password, user.password)) {
-            return user;
-        }
-
-        throw new Error();
+    static isValidPassword(password, hashPassword) {
+        return bcrypt.compareSync(password, hashPassword);
     }
 
     static generateTokens(user) {

@@ -4,25 +4,25 @@ import config from '@/config';
 class ConcertsService {
     static fetchConcerts(params) {
         return ApiService
-            .authGet(`${config.apiUrl}/admin/concerts`, { params })
+            .authGet(`${config.apiUrl}/concerts/admin`, { params })
             .then(response => response.data);
     }
 
     static create(concert) {
         return ApiService
-            .authPost(`${config.apiUrl}/admin/concerts`, concert)
+            .authPost(`${config.apiUrl}/concerts`, concert)
             .then(response => response.data);
     }
 
     static update(concert) {
         return ApiService
-            .authPut(`${config.apiUrl}/admin/concerts/${concert.id}`, concert)
+            .authPut(`${config.apiUrl}/concerts/${concert.id}`, concert)
             .then(response => response.data);
     }
 
     static delete(concertId) {
         return ApiService
-            .authDelete(`${config.apiUrl}/admin/concerts/${concertId}`)
+            .authDelete(`${config.apiUrl}/concerts/${concertId}`)
             .then(response => response.data);
     }
 }
