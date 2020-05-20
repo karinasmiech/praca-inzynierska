@@ -5,6 +5,7 @@ const { authorize } = require('../middlewares');
 router.get('/', (req, res) => res.sendStatus(200));
 router.use('/auth', routes.auth);
 router.use('/concerts', routes.concerts);
+router.use('/musicans', routes.musicans);
 router.use('/account', authorize, routes.account);
 
 module.exports = router;

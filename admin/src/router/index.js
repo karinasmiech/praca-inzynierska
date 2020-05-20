@@ -5,7 +5,7 @@ import Layout from '@/components/layout.vue';
 import SignIn from '@/components/sign-in.vue';
 import Concerts from '@/components/concerts.vue';
 import Account from '@/components/account.vue';
-import Crew from '@/components/crew.vue';
+import Musicans from '@/components/musicans.vue';
 
 Vue.use(VueRouter);
 
@@ -26,8 +26,8 @@ const routes = [
             },
             {
                 path: 'zespol',
-                name: 'crew',
-                component: Crew
+                name: 'musicans',
+                component: Musicans
             },
             {
                 path: 'konto',

@@ -26,13 +26,13 @@ router.put('/password', (req, res, next) => {
                         null,
                         { password: bcrypt.hashSync(req.body.newPassword, 10) },
                         { new: true }
-                        );
+                    );
             }
 
             throw httpError(400, 'Invalid password');
         })
         .then((user) => res.json(user))
         .catch(next);
-})
+});
 
 module.exports = router;

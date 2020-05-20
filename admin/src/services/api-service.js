@@ -6,6 +6,10 @@ import { types } from '@/helpers';
 const authAxios = axios.create();
 
 class ApiService {
+    static get(...params) {
+        return axios.get(...params);
+    }
+
     static post(...params) {
         return axios.post(...params);
     }
