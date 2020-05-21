@@ -17,8 +17,20 @@ cd admnin
 npm run build-image
 ```
 
+* Build frontend docker image:
+
+```bash
+cd frontend
+npm run build-image
+```
+
 * Run docker compose:
 
 ```bash
 docker-compose up -d
+```
+
+You can also use bash script to build images and run app with one command:
+```bash
+./run.sh
 ```

@@ -19,3 +19,8 @@ services:
     image: 'praca-inzynierska-admin:latest'
     ports:
       - 8081:80
+  frontend:
+    container_name: frontend
+    image: 'praca-inzynierska-frontend:latest'
+    ports:
+      - 8080:80
