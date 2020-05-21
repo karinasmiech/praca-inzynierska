@@ -1,0 +1,688 @@
+@font-face {
+    font-family: "Futura";
+    src: url("../assets/fonts/FuturaLT-Book.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+body {
+    font-family: "Futura", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background: #000000;
+    color: #FFFFFF;
+}
+
+div {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+p {
+    font-family: "Futura", sans-serif;
+    font-size: 14px;
+    line-height: 2.18;
+    font-weight: 400;
+    color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+p a {
+    display: inline;
+    position: relative;
+    color: inherit;
+    border-bottom: solid 1px #ffa07f;
+    transition: all 200ms ease;
+}
+
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+a {
+    transition: all 200ms ease;
+}
+
+a, a:hover, a:visited, a:active, a:link {
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+p a:active {
+    position: relative;
+    color: #FF6347;
+}
+
+p a:hover {
+    color: #FFFFFF;
+    background: #ffa07f;
+}
+
+p a:hover::after {
+    opacity: 0.2;
+}
+
+::selection {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Futura", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    line-height: 1.2;
+}
+
+button:active {
+    outline: none;
+}
+
+.form-control {
+    color: #db5246;
+}
+
+section {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.trans_200 {
+    transition: all 200ms ease;
+}
+
+.trans_300 {
+    transition: all 300ms ease;
+}
+
+.trans_400 {
+    transition: all 400ms ease;
+}
+
+.trans_500 {
+    transition: all 500ms ease;
+}
+
+.fill_height {
+    height: 100%;
+}
+
+.super_container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.prlx_parent {
+    overflow: hidden;
+}
+
+.prlx {
+    height: 130% !important;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+.parallax_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.nopadding {
+    padding: 0px !important;
+}
+
+.section_subtitle {
+    font-size: 18px;
+    line-height: 0.75;
+}
+
+.section_title {
+    margin-top: 7px;
+    margin-left: -2px;
+}
+
+/*********************************
+3. Header
+*********************************/
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #000000;
+    z-index: 100;
+    transition: all 400ms ease;
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.header_content {
+    width: 100%;
+    height: 101px;
+    padding-left: 51px;
+    padding-right: 52px;
+    transition: all 400ms ease;
+}
+
+.header.scrolled .header_content {
+    height: 70px;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 51px;
+}
+
+.logo a {
+    font-family: "Futura", sans-serif;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.log_reg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 52px;
+}
+
+.log_reg ul li {
+    position: relative;
+}
+
+.log_reg ul li:not(:last-child)::after {
+    display: inline-block;
+    content: "/";
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.log_reg ul li a {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.log_reg ul li a:hover {
+    color: #de4f33;
+}
+
+.main_nav ul li:not(:last-child) {
+    margin-right: 24px;
+}
+
+.main_nav ul li {
+    position: relative;
+}
+
+.main_nav ul li a {
+    position: relative;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-left: 26px;
+    padding-right: 23px;
+    z-index: 1;
+}
+
+.main_nav ul li a::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 17px;
+    background: #525252;
+    content: "";
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 400ms ease;
+}
+
+.main_nav ul li.active a::after,
+.main_nav ul li a:hover::after {
+    bottom: -5px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.hamburger {
+    display: none;
+    width: 50px;
+    height: 24px;
+    cursor: pointer;
+    padding: 5px;
+    right: -5px;
+}
+
+.hamburger > div {
+    width: 100%;
+    height: 100%;
+}
+
+.hamburger > div > div {
+    height: 2px;
+    background: #FFFFFF;
+    transition: all 400ms ease;
+}
+
+.hamburger > div > div:first-child {
+    width: 90%;
+}
+
+.hamburger > div > div:nth-child(2) {
+    width: 50%;
+}
+
+.hamburger > div > div:nth-child(3) {
+    width: 70%;
+}
+
+.hamburger:hover > div > div {
+    width: 100%;
+}
+
+/*********************************
+4. Menu
+*********************************/
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 101;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 800ms ease;
+}
+
+.menu_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.menu.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu > div {
+    width: 100%;
+    height: 100%;
+}
+
+.menu_container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -300px;
+    width: 300px;
+    transition: all 1000ms 600ms ease;
+}
+
+.menu.active .menu_container {
+    right: 0;
+}
+
+.menu_log_reg {
+    display: none;
+    width: 100%;
+    background: #000000;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 5px;
+    border-bottom: solid 2px #de4f32;
+}
+
+.menu_log_reg a {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.menu_log_reg a:hover {
+    color: #de4f32;
+}
+
+.menu_log_reg ul li {
+    position: relative;
+}
+
+.menu_log_reg ul li:not(:last-child)::after {
+    display: inline-block;
+    content: "/";
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.menu_nav {
+    width: 100%;
+    background: #000000;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: solid 5px #de4f32;
+}
+
+.menu_nav ul li {
+    position: relative;
+}
+
+.menu_nav ul li a:hover::before {
+    left: 100%;
+}
+
+.menu_nav ul li:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+.menu_nav ul li a {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.menu_nav ul li a::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: #FFFFFF;
+    content: "";
+    transition: all 400ms 200ms ease;
+}
+
+.menu_nav ul li a:hover {
+    color: #de4f32;
+}
+
+.home {
+    width: 100%;
+    height: 892px;
+    padding-left: 51px;
+    padding-right: 52px;
+}
+
+.home_slider_container {
+    width: 100%;
+    height: 100%;
+}
+
+.home_slider.owl-theme .owl-nav.disabled + .owl-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 24px;
+    z-index: 10;
+}
+
+.home_slider.owl-theme .owl-dots .owl-dot span {
+    width: 14px;
+    height: 14px;
+    background: #4d4d4d;
+    border-radius: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    transition: all 200ms ease;
+}
+
+.home_slider.owl-theme .owl-dots .owl-dot.active span,
+.home_slider.owl-theme .owl-dots .owl-dot:hover span {
+    background: #000000;
+}
+
+.home_container {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding-top: 72px;
+}
+
+.home_container_inner {
+    width: 100%;
+    height: 100%;
+}
+
+.home_content {
+
+}
+
+.home_subtitle {
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.home_title {
+    margin-top: 24px;
+}
+
+.home_title h1 {
+    font-size: 82px;
+}
+
+.home_link {
+    margin-top: 21px;
+}
+
+.home_link a {
+    position: relative;
+    padding-left: 17px;
+    padding-right: 12px;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.home_link a::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 22px;
+    background: #000000;
+    content: "";
+    z-index: -1;
+    transition: all 400ms ease;
+}
+
+.home_link a:hover::before {
+    background: #de4f33;
+}
+
+.shows {
+    padding-top: 175px;
+}
+
+.shows_row {
+    margin-top: -55px;
+}
+
+.shows_list_col {
+    z-index: 1;
+}
+
+.shows_image {
+    left: -98px;
+    width: calc(100% + 252px);
+}
+
+.shows_image img {
+    max-width: 100%;
+}
+
+.shows_image .image_overlay {
+    z-index: 0;
+}
+
+.shows_list_container {
+    width: calc(100% + 13px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.shows_list li {
+    width: 100%;
+    height: 81px;
+    background: #333232;
+    padding-left: 11px;
+    padding-right: 37px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.shows_list li a {
+    color: #FFFFFF;
+}
+
+.shows_list li:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+.show_date {
+    width: 135px;
+    height: 60px;
+    background: #de4f32;
+    line-height: 60px;
+    text-align: center;
+    margin-right: 23px;
+}
+
+.show_info {
+    width: 100%;
+    height: 100%;
+    padding-right: 23px;
+}
+
+.show_name {
+    width: 50%;
+    margin-right: 23px;
+}
+
+.show_name a:hover {
+    color: #de4f32;
+}
+
+.show_location {
+    width: calc(50% - 23px);
+    margin-left: 23px;
+}
+
+.show_shop {
+    width: 120px;
+    height: 35px;
+    background: #000000;
+    line-height: 35px;
+    text-align: center;
+}
+
+.artist {
+    padding-bottom: 106px;
+    background: #000000;
+}
+
+.artist_image img {
+    width: 100%;
+    display: block;
+}
+
+.artist_text {
+    margin-top: 39px;
+}
+
+.artist_text p:not(:last-child) {
+    margin-bottom: 30px;
+}
