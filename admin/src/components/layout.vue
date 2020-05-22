@@ -55,6 +55,17 @@
             {{snackbarText}}
             <v-btn color="pink" text @click="snackbar = false">Zamknij</v-btn>
         </v-snackbar>
+        <v-snackbar 
+            v-model="passwordSnackbar"
+            color="black"
+            :timeout="0"
+            top
+        >
+            Kliknij tutaj aby zmienić hasło
+            <v-btn text small @click="handleSnackbarClick">
+                Konto
+            </v-btn>
+        </v-snackbar>
     </div>
 </template>
 
@@ -67,10 +78,18 @@ export default {
     },
     data() {
         return {
-            drawer: null
+            drawer: null,
+            passwordSnackbar: false
         };
     },
     created() {
+        const username = this.$store.getters['auth/username'];
+        const password = this.$store.getters['auth/password'];
+
+        if (username === 'admin' && password === 'password') {
+            this.passwordSnackbar = true;
+        }
+
         this.$store.dispatch('account/fetchData');
     },
     computed: {
@@ -88,7 +107,15 @@ export default {
         }
     },
     methods: {
-        ...mapActions('auth', ['signOut'])
+        ...mapActions('auth', ['signOut']),
+        handleSnackbarClick() {
+            this.$store.commit('account/SET_PASSWORDS', {});
+            this.passwordSnackbar = false;
+
+            if (this.$route.name !== 'account') {
+                this.$router.push({ name: 'account' });
+            }
+        }
     }
 };
 </script>
