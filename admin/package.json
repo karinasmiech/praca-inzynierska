@@ -7,7 +7,7 @@
     "build-image": "docker build -t praca-inzynierska-admin ."
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "js-base64": "^2.5.2",
     "jsonwebtoken": "^8.5.1",
